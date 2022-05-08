@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorDark"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_question"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="4"
+                android:text="@string/question"
+                android:textColor="@color/colorAccent"
+                android:textSize="10pt" />
+
+            <TextView
+                android:id="@+id/tv_count"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="2"
+                android:text="Total count: 0"
+                android:textAlignment="textEnd"
+                android:textColor="@color/colorAccent" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_ans"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:hint="@string/hint_ans"
+            android:imeOptions="flagNoExtractUi"
+            android:inputType="number"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent">
+
+        </EditText>
+
+        <LinearLayout
+            android:id="@+id/ly_result"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_result"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text=""
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="22sp">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_submit"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimaryDark"
+            android:onClick="submitOnClick"
+            android:text="@string/submit"
+            android:textColor="@color/colorAccent">
+
+        </Button>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_continue"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:onClick="continueOnclick"
+                android:text="@string/continue_bt"
+                android:textColor="@color/colorAccent">
+
+            </Button>
+
+            <Button
+                android:id="@+id/bt_exit"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:onClick="exitOnclick"
+                android:text="@string/exit_bt"
+                android:textColor="@color/colorAccent">
+
+            </Button>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

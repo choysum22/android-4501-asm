@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    tools:context=".ResultActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:justificationMode="inter_word"
+        android:text="Game Over"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title_result"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:justificationMode="inter_word"
+        android:text="Results"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="22sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_pie"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginLeft="80dp"
+        app:layout_constraintBottom_toTopOf="@+id/ly_retry_history"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_result">
+
+
+        <ProgressBar
+            android:id="@+id/stats_correct"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="100"
+            android:progressDrawable="@drawable/stats_full"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/stats_wrong"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/stats_progress"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_number_of_answers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.00%"
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/cl_pie"
+        app:layout_constraintTop_toBottomOf="@+id/title_result">
+
+        <TextView
+            android:id="@+id/tv_result_correct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:text="Correct: 10"
+            android:textColor="@color/colorBrightGreen"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_result_wrong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:text="Incorrect: 2"
+            android:textColor="@color/colorBrightRed"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:justificationMode="inter_word"
+        android:text="Score: 450"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/cl_pie"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/tv_totalCount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:justificationMode="inter_word"
+        android:text="Total no. of Questions: 12"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
+
+        app:layout_constraintStart_toEndOf="@+id/cl_pie"
+        app:layout_constraintTop_toBottomOf="@+id/tv_score" />
+
+    <TextView
+        android:id="@+id/tv_timer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:justificationMode="inter_word"
+        android:text="Total time: 89.09s"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
+
+        app:layout_constraintStart_toEndOf="@+id/cl_pie"
+        app:layout_constraintTop_toBottomOf="@+id/tv_totalCount" />
+
+    <TextView
+        android:id="@+id/tv_avg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:justificationMode="inter_word"
+        android:text="Average Time per Question: 9.80s"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp"
+
+        app:layout_constraintStart_toEndOf="@+id/cl_pie"
+        app:layout_constraintTop_toBottomOf="@+id/tv_timer" />
+
+    <LinearLayout
+        android:id="@+id/ly_retry_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bt_retry"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/bt_question_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:onClick="questionOnClick"
+            android:text="@string/result_bt"
+            android:textColor="@color/colorAccent">
+
+        </Button>
+
+        <Button
+            android:id="@+id/bt_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:onClick="historyOnClick"
+            android:text="@string/record_bt"
+            android:textColor="@color/colorAccent">
+
+        </Button>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_retry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:onClick="retryOnClick"
+        android:text="@string/retry_bt"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </Button>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

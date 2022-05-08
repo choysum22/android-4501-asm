@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Math Challenge Game</string>
+    <string name="math_challenge">Math Challenge</string>
+    <string name="start">Start</string>
+    <string name="history_record">History Record</string>
+    <string name="return_string">Return</string>
+    <string name="question_list_from_last_try">Question List from Last Try</string>
+    <string name="past_record">Past Record</string>
+    <string name="time_elapsed">Time Elapsed</string>
+    <string name="hint_ans">Type in your answer</string>
+    <string name="question">Question:</string>
+    <string name="submit">Submit</string>
+    <string name="continue_bt">Continue</string>
+    <string name="exit_bt">Exit</string>
+    <string name="retry_bt">Try Again</string>
+    <string name="result_bt">Questions</string>
+    <string name="record_bt">Record</string>
+    <string name="loading">Loading...</string>
+</resources>
